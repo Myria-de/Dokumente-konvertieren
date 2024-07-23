@@ -18,6 +18,10 @@ soffice --convert-to html Test.pdf
 ```
 sudo apt install libreoffice-java-common
 ```
-
 # Libre Office als Server starten
+Das Projekt Unoserver (https://github.com/unoconv/unoserver) erleichtert die Verwendung. Es ist der verbesserte Nachfolger von Unoconv, das als veraltet gilt, aber meist noch in den Paketquellen der Distributionen zu finden ist.
 
+Die Installation des Python-Projekts erfolgt am sichersten in einer virtuellen Python-Umgebung. Das erfordert mehrere Schritte, weshalb wir dafür das Bash-Script "install-unoserver.sh" für Ubuntu 22.04/24.04 und Linux Mint 21.3 zur Verfügung stellen. Laden Sie die Datei herunter und starten Sie das Script im Terminal mit
+```
+sh ~/Downloads/install_unoserver.sh
+```
