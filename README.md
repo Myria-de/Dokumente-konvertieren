@@ -22,7 +22,7 @@ soffice --convert-to html Test.pdf
 sudo apt install libreoffice-java-common
 ```
 # Libre Office als Server starten
-Das Projekt Unoserver (https://github.com/unoconv/unoserver) erleichtert die Verwendung. Es ist der verbesserte Nachfolger von Unoconv, das als veraltet gilt, aber meist noch in den Paketquellen der Distributionen zu finden ist.
+Das Projekt [Unoserver](https://github.com/unoconv/unoserver) erleichtert die Verwendung. Es ist der verbesserte Nachfolger von Unoconv, das als veraltet gilt, aber meist noch in den Paketquellen der Distributionen zu finden ist.
 
 Die Installation des Python-Projekts erfolgt am sichersten in einer virtuellen Python-Umgebung. Das erfordert mehrere Schritte, weshalb wir dafür das Bash-Script "install-unoserver.sh" für Ubuntu 22.04/24.04 und Linux Mint 21.3 zur Verfügung stellen. Laden Sie die Datei herunter und starten Sie das Script im Terminal mit
 ```
@@ -56,8 +56,8 @@ unoconvert --filter-option PageRange=1-1 --filter-option EncryptFile=true --filt
 ```
 für eine verschlüsselte PDF-Datei mit Passwortschutz. Unoconvert kann Optionen für PDF auch mit älteren Libre-Office-Versionen verwenden, weil über den Server-Modus die API direkt angesprochen wird.
 
-**Mehrere Dateien verarbeiten:** Unoconvert kann zurzeit nur einzelne Dateien konvertieren. Für mehrere Dateien auf einmal benötigen Sie ein Script. Ein Beispiel mit dem Dateinamen „convert-pdf.sh“ finden Sie über https://m6u.de/DOLO. Hinter den Variablen „IN=“ und „OUT=“ legen Sie das Verzeichnis mit den Quelldateien und das Zielverzeichnis fest. Die Schleife „for f in $IN/*.odt do … done“ ermittelt die odt-Dateien im Quellverzeichnis und übergibt sie in einer Befehlszeile an unoconvert.
+**Mehrere Dateien verarbeiten:** Unoconvert kann zurzeit nur einzelne Dateien konvertieren. Für mehrere Dateien auf einmal benötigen Sie ein Script wie „convert-pdf.sh“. Hinter den Variablen „IN=“ und „OUT=“ legen Sie das Verzeichnis mit den Quelldateien und das Zielverzeichnis fest. Die Schleife „for f in $IN/*.odt do … done“ ermittelt die odt-Dateien im Quellverzeichnis und übergibt sie in einer Befehlszeile an unoconvert.
 
 # Erweiterten Konvertierungsdienst einrichten
 
-Im Server-Modus lässt sich Libre Office auf vielfältige Weise steuern, nicht nur über die Kommandozeile. Unser Projekt lwPDF (https://m6u.de/LOSE) liefert dafür Beispiele.
+Im Server-Modus lässt sich Libre Office auf vielfältige Weise steuern, nicht nur über die Kommandozeile. Unser Projekt [lwPDF](https://m6u.de/LOSE) liefert dafür Beispiele.
