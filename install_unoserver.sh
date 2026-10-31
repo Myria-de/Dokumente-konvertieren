@@ -1,28 +1,24 @@
 #!/usr/bin/env bash
 echo "Prüfe Voraussetzungen..."
-if [ ! -d /usr/share/doc/python3-venv ]
- then
- echo "Installiere pip3" 
- sudo apt python3-venv
-else
- echo OK: python3-venv
-fi
-
 if [ -z $(which pip3) ]
 then
  echo "Installiere pip3"
- sudo apt-get -y install git
+ sudo apt -y install python3-pip
 else
- echo OK: pip3
+ echo OK: pip3 vorhanden
+fi
+
+if [ -z $(which virtualenv) ]
+then
+ echo "Installiere virtualenv "
+ sudo apt -y install python3-virtualenv 
+else
+ echo OK: virtualenv vorhanden
 fi
 cd ~
 echo Installiere unoserver in ~/.unoserver
-python3 -m venv ./.unoserver
-. ./.unoserver/bin/activate
-pip3 install oooenv
-oooenv cmd-link -a
-pip3 install unoserver
-deactivate
+virtualenv --python=/usr/bin/python3 --system-site-packages ~/.unoserver
+~/.unoserver/bin/pip install unoserver
 
 echo Erzeuge Start/Stop-Script
 cat<<EOF>~/.unoserver/bin/start-unoserver.sh
@@ -36,5 +32,10 @@ chmod a+x ~/.unoserver/bin/start-unoserver.sh
 chmod a+x ~/.unoserver/bin/stop-unoserver.sh
 
 echo Bitte fügen Sie ~/.unoserver/bin in der Datei .profile
-echo zur Umgebungsvariablen PATH hinzu
+echo zur Umgebungsvariablen PATH hinzu. Verwenden Sie die Zeile
+echo
+echo 'export PATH="$HOME/.unoserver/bin:$PATH"'
+echo
+echo Danach starten Sie source ~/.profile, damit die Anpassung für das aktuelle Terminal gilt.
+echo Nach einem Linux-Neustart gilt sie für alle Terminals.
 
