@@ -6,5 +6,5 @@ do
   echo "Konvertiere $f nach pdf"
   filename=$(basename -- "$f")
   filename="${filename%.*}"
-  ~/.unoserver/bin/unoconvert --convert-to pdf $f $OUT/$filename.pdf
+  ~/.unoserver/bin/unoconvert --convert-to pdf "$f" "$OUT/$filename.pdf"
 done
