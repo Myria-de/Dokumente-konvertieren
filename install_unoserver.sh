@@ -22,7 +22,7 @@ virtualenv --python=/usr/bin/python3 --system-site-packages ~/.unoserver
 
 echo Erzeuge Start/Stop-Script
 cat<<EOF>~/.unoserver/bin/start-unoserver.sh
-~/.unoserver/bin/unoserver --daemon -p ~/.unoserver/lo.pid
+~/.unoserver/bin/unoserver --daemon
 ps ax | grep ".unoserver/bin/unoserver" | grep -v grep|cut -c 1-8 | sed "s/ *$//g" | sed "s/^ *//g"> ~/.unoserver/unoserver.pid
 EOF
 cat<<EOF>~/.unoserver/bin/stop-unoserver.sh
