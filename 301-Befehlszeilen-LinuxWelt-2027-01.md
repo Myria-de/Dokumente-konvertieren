@@ -1,5 +1,6 @@
 ## Was steckt in einer Office-Datei?
-file Dokument.odt
+
+```file Dokument.odt```
 
 ## Libre-Office-Dateien im Terminal konvertieren
 
